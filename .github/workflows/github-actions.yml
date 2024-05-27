@@ -55,6 +55,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./dist/client.exe
+        asset_path: ./dist/client/client.exe
         asset_name: client.exe
         asset_content_type: application/x-msdownload
