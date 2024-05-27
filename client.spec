@@ -2,7 +2,7 @@
 
 
 a = Analysis(
-    ['传输图像流（同步差分传输-Netty中转）.py'],
+    ['client.py'],
     pathex=[],
     binaries=[],
     datas=[('curser_point.png', 'icon'),('computer.png', 'icon')],
@@ -21,7 +21,7 @@ exe = EXE(
     a.scripts,
     [],
     exclude_binaries=True,
-    name='传输图像流（同步差分传输-Netty中转）',
+    name='client',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
@@ -40,5 +40,5 @@ coll = COLLECT(
     strip=False,
     upx=True,
     upx_exclude=[],
-    name='传输图像流（同步差分传输-Netty中转）',
+    name='client',
 )
