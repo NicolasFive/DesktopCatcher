@@ -11,7 +11,6 @@ import threading
 import argparse
 import pystray
 from PIL import Image
-import sys
 
 
 # 截屏对象转换成OpenCV对象
