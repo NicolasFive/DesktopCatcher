@@ -48,8 +48,11 @@ jobs:
         draft: false
         prerelease: false
 
-    - name: List files in dist directory
-      run: find . -type f |xargs -i echo {}
+    - name: Compress Release Files
+      run: tar -zcvf dist.tar.gz ./dist
+
+    # - name: List files in dist directory
+    #   run: find . -type f |xargs -i echo {}
 
     - name: Upload exe to Release
       id: upload-release-asset
@@ -58,6 +61,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./dist/client/client.exe
-        asset_name: client.exe
+        asset_path: ./dist.tar.gz
+        asset_name: dist.tar.gz
         asset_content_type: application/x-msdownload
